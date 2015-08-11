@@ -1,0 +1,40 @@
+<h3>Doctor's Appointments</h3>
+<div class= 'col-md-10'></div>
+<input class = 'col-md-2' type="text" ng-model = 'searchText' placeholder = 'Search'>
+<div ng-repeat="error in apptsCtrl.errors">
+  <p ng-bind="error"></p>
+</div>
+
+<div class="row margin-0 list-header hidden-sm hidden-xs">
+   <div class="col-md-2"><div class="header">Date</div></div>
+   <div class="col-md-2"><div class="header">Time</div></div>
+   <div class="col-md-3"><div class="header">Patient Name</div></div>
+   <div class="col-md-4"><div class="header">Complaint</div></div>
+   <div class="col-md-1"><div class="header">Cancel</div></div>
+</div>
+<div class="row margin-0" ng-repeat="appointment in apptsCtrl.appointments | orderBy: 'date' | filter: searchText">
+   <div class="col-md-2">
+     	<div class="cell" ng-bind='appointment.date | date'>
+     	</div>
+   </div>
+   <div class="col-md-2">
+     	<div class="cell" ng-bind='appointment.time'>
+     	</div>
+   </div>
+   <div class="col-md-3">
+      <div class="cell" ng-bind='appointment.name'>
+      </div>
+   </div>
+   <div class="col-md-4">
+      <div class="cell" ng-bind='appointment.description'>
+      </div>
+   </div>
+   <div class="col-md-1">
+     	<div class="cell" ng-if="apptsCtrl.user.name == appointment.name">
+        	<button class = 'btn btn-danger btn-sm' ng-click='apptsCtrl.removeAppointment(appointment)'>Remove</button>
+     	</div>
+   </div>
+   <br><br>
+</div>
+<br>
+<a href="#/new" class='btn btn-primary pull-right'>Add New Appointment</a>

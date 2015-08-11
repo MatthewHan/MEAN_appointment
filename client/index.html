@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+	<meta charset="UTF-8">
+	<title>Doctor's Appointments</title>
+	<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <!-- CSS for this page-->
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <!-- jQuery -->
+    <script type = "text/javascript" src = "/js/lib/jquery.min.js"></script>
+    <!-- Bootstrap specific javascript functions -->
+    <script type = "text/javascript" src = "/js/lib/bootstrap.min.js"></script>
+	<!-- AngularJS -->
+    <script type = "text/javascript" src = "/js/lib/angular/angular.min.js"></script>
+    <script type = "text/javascript" src = "/js/lib/moment/moment.js"></script>
+    <script type = "text/javascript" src = "/js/lib/angular-moment/angular-moment.js"></script>
+    <!-- AngularJS Routes-->
+    <script type = "text/javascript" src = "/js/lib/angular/angular-route.min.js"></script>
+    <script type = "text/javascript" src = "/js/modules.js"></script>
+    <script type = "text/javascript" src = "/js/factories.factory.js"></script>
+    <script type = "text/javascript" src = "/js/controllers.ctrl.js"></script>
+    <script type = "text/javascript" src = "/js/helper.js"></script>
+    <script type ="text/javascript">
+        //$(document).ready(function (){
+            var name = prompt("Please enter a name");
+            $.post('/users',{name: name}, function(data){
+                if(data==='done'){}
+            })
+        //})
+    </script>
+
+</head>
+<body>
+    <div class = 'method container' ng-view=""></div>
+</body>
+</html>

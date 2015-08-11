@@ -1,0 +1,9 @@
+{
+  "name": "mean_customers_orders",
+  "dependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "express-session": "^1.11.3",
+    "mongoose": "latest"
+  }
+}
